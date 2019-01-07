@@ -6,7 +6,7 @@ public class MainAccount : MonoBehaviour
 {
   void Start()
   {
-    //
+    new UpdateLang().Everything();
   }
 
   void Update()
