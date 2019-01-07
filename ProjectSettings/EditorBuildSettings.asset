@@ -8,7 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Sketch.unity
     guid: ad44e61139ba70d4da3c545b8e5faf8c
+  - enabled: 1
+    path: Assets/Scenes/Account.unity
+    guid: f16dc15aaa682844ab2ca4f163f57017
   m_configObjects: {}
