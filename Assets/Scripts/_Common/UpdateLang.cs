@@ -1,5 +1,4 @@
-using System; // Type
-using System.Reflection; // PropertyInfo
+using System.IO;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
@@ -7,21 +6,23 @@ using UnityEngine;
 
 public class UpdateLang : MonoBehaviour
 {
-  public void Everything()
+  public void Account()
   {
-    // get account
-    // get scene
-    // get lang (scene and common)
+    string json = Tools.GetFile("/Sources/_Common.json");
+    Serials.Sources_Common snap = JsonUtility.FromJson<Serials.Sources_Common>(json);
 
-    Header();
+    Header(snap.lang);
   }
 
-  public void Header()
+  public void Header(string lang)
   {
-    Text BST = GameObject.Find("ButtonSettingsText").GetComponent<Text>();
-    Text BET = GameObject.Find("ButtonExitText").GetComponent<Text>();
+    string json = Tools.GetFile("/Langs/" + lang + "/Header.json");
+    Serials.LangsHeader snap = JsonUtility.FromJson<Serials.LangsHeader>(json);
 
-    BST.text = "???";
-    BET.text = "!!!";
+    Text ButtonSettingsText = GameObject.Find("ButtonSettingsText").GetComponent<Text>();
+    Text ButtonExitText = GameObject.Find("ButtonExitText").GetComponent<Text>();
+
+    ButtonSettingsText.text = snap.settings;
+    ButtonExitText.text = snap.exit;
   }
 }
