@@ -19,10 +19,10 @@ public class UpdateLang
       string jsonPlayer = Tools.GetFile("/Accounts/" + index + "/Player.json");
       Serials.Player snapPlayer = JsonUtility.FromJson<Serials.Player>(jsonPlayer);
 
-      GameObject selector0 = GameObject.Find("AccountSelector" + index);
-      Text _0 = selector0.transform.GetChild(3).gameObject.GetComponent<Text>();
-      Text _1 = selector0.transform.GetChild(4).gameObject.GetComponent<Text>();
-      Text _2 = selector0.transform.GetChild(5).GetChild(0).gameObject.GetComponent<Text>();
+      GameObject selector = GameObject.Find("AccountSelector" + index);
+      Text _0 = selector.transform.GetChild(3).gameObject.GetComponent<Text>();
+      Text _1 = selector.transform.GetChild(4).gameObject.GetComponent<Text>();
+      Text _2 = selector.transform.GetChild(5).GetChild(0).gameObject.GetComponent<Text>();
       bool playerExists = snapPlayer.name == "null";
 
       _0.text = "0" + "%";
