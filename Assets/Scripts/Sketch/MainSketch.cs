@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class MainSketch : MonoBehaviour
 {
+  //Instantiate the script
+  Tools tools = new Tools();
+  //----------------------
+  
+  protected Texture2D cursorIdle;
+  protected Texture2D cursorClick;
+
   void Start()
   {
     //
@@ -11,6 +18,6 @@ public class MainSketch : MonoBehaviour
 
   void Update()
   {
-    //
+    tools.ChangeCursor(cursorIdle, cursorClick);
   }
 }
