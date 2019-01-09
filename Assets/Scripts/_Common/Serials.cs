@@ -14,6 +14,7 @@ public class Serials
   {
     public string question;
     public string discovered;
+    public string newPlayer;
   }
 
   [System.Serializable]

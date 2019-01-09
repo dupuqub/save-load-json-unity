@@ -23,10 +23,14 @@ public class UpdateLang
       Text _0 = selector0.transform.GetChild(2).gameObject.GetComponent<Text>();
       Text _1 = selector0.transform.GetChild(3).gameObject.GetComponent<Text>();
       Text _2 = selector0.transform.GetChild(4).gameObject.GetComponent<Text>();
+      bool playerExists = snapPlayer.name == "null";
 
       _0.text = "0" + "%";
       _1.text = snapAccount.discovered;
-      _2.text = snapPlayer.name == "null" ? "new player" : snapPlayer.name;
+      _2.text = playerExists ? snapAccount.newPlayer : snapPlayer.name;
+
+      _0.color = playerExists ? _0.color : new Color(1.0f, 1.0f, 1.0f);
+      _2.color = playerExists ? _2.color : new Color(1.0f, 1.0f, 1.0f);
     }
 
     Text question = GameObject.Find("QuestionText").GetComponent<Text>();
