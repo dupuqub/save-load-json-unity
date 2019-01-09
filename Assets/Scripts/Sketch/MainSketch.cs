@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class MainSketch : MonoBehaviour
 {
-  //Instantiate the script
-  Tools tools = new Tools();
-  //----------------------
-  
+  //....................................................................................................................
+  // Instances.
+
+  Tools _Tools = new Tools();
+
+  //....................................................................................................................
+
   protected Texture2D cursorIdle;
   protected Texture2D cursorClick;
 
@@ -18,6 +21,6 @@ public class MainSketch : MonoBehaviour
 
   void Update()
   {
-    tools.ChangeCursor(cursorIdle, cursorClick);
+    _Tools.ChangeCursor(cursorIdle, cursorClick);
   }
 }

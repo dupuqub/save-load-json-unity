@@ -1,10 +1,10 @@
 using System.IO;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine.UI;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class UpdateLang : MonoBehaviour
+public class UpdateLang
 {
   public void Account()
   {
@@ -19,10 +19,10 @@ public class UpdateLang : MonoBehaviour
     string json = Tools.GetFile("/Langs/" + lang + "/Header.json");
     Serials.LangsHeader snap = JsonUtility.FromJson<Serials.LangsHeader>(json);
 
-    Text ButtonSettingsText = GameObject.Find("ButtonSettingsText").GetComponent<Text>();
-    Text ButtonExitText = GameObject.Find("ButtonExitText").GetComponent<Text>();
+    Text settings = GameObject.Find("ButtonSettingsText").GetComponent<Text>();
+    Text exit = GameObject.Find("ButtonExitText").GetComponent<Text>();
 
-    ButtonSettingsText.text = snap.settings;
-    ButtonExitText.text = snap.exit;
+    settings.text = snap.settings;
+    exit.text = snap.exit;
   }
 }

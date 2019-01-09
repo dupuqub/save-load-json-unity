@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Serials : MonoBehaviour
+public class Serials
 {
   [System.Serializable]
   public class Sources_Common : System.Object
