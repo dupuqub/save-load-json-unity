@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class MainAccount : MonoBehaviour
 {
-  //....................................................................................................................
-  // Instances.
-
-  UpdateLang _UpdateLang = new UpdateLang();
-
-  //....................................................................................................................
-
   void Start()
   {
-    _UpdateLang.Account();
+    UpdateLang.Account();
   }
 
   void Update()

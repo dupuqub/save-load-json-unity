@@ -7,14 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class Tools
 {
-  protected CursorMode cursorMode;
+  protected static CursorMode cursorMode;
 
-  public void PlayParticleSystem(ParticleSystem particles)
+  public static void PlayParticleSystem(ParticleSystem particles)
   {
     particles.Play();
   }
 
-  public void AudioSourceOnOff(AudioSource audioSource)
+  public static void AudioSourceOnOff(AudioSource audioSource)
   {
     // O AudioSource toca audio na Scene.
     // Só pode ter um por Scene.
@@ -29,17 +29,17 @@ public class Tools
     }
   }
 
-  public void PlaySoundFX(AudioSource audioSource, AudioClip audioClip)
+  public static void PlaySoundFX(AudioSource audioSource, AudioClip audioClip)
   {
     audioSource.PlayOneShot(audioClip);
   }
 
-  public void ChangeScene(int index)
+  public static void ChangeScene(int index)
   {
     SceneManager.LoadScene(index);
   }
 
-  public void ChangeCursor(Texture2D cursorIdle, Texture2D cursorClick)
+  public static void ChangeCursor(Texture2D cursorIdle, Texture2D cursorClick)
   {
     if(Input.GetMouseButton(0))
     {

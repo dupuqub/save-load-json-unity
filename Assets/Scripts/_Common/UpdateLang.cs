@@ -6,15 +6,36 @@ using UnityEngine.UI;
 
 public class UpdateLang
 {
-  public void Account()
+  public static void Account()
   {
-    string json = Tools.GetFile("/Sources/_Common.json");
-    Serials.Sources_Common snap = JsonUtility.FromJson<Serials.Sources_Common>(json);
+    string jsonCommon = Tools.GetFile("/Sources/_Common.json");
+    Serials.SourcesCommon snapCommon = JsonUtility.FromJson<Serials.SourcesCommon>(jsonCommon);
 
-    Header(snap.lang);
+    string jsonAccount = Tools.GetFile("/Langs/" + snapCommon.lang + "/Account.json");
+    Serials.SourcesAccount snapAccount = JsonUtility.FromJson<Serials.SourcesAccount>(jsonAccount);
+
+    for(int index = 0; index < 4; index ++)
+    {
+      string jsonPlayer = Tools.GetFile("/Accounts/" + index + "/Player.json");
+      Serials.Player snapPlayer = JsonUtility.FromJson<Serials.Player>(jsonPlayer);
+
+      GameObject selector0 = GameObject.Find("AccountSelector" + index);
+      Text _0 = selector0.transform.GetChild(2).gameObject.GetComponent<Text>();
+      Text _1 = selector0.transform.GetChild(3).gameObject.GetComponent<Text>();
+      Text _2 = selector0.transform.GetChild(4).gameObject.GetComponent<Text>();
+
+      _0.text = "0" + "%";
+      _1.text = snapAccount.discovered;
+      _2.text = snapPlayer.name == "null" ? "new player" : snapPlayer.name;
+    }
+
+    Text question = GameObject.Find("QuestionText").GetComponent<Text>();
+    question.text = snapAccount.question;
+
+    Header(snapCommon.lang);
   }
 
-  public void Header(string lang)
+  public static void Header(string lang)
   {
     string json = Tools.GetFile("/Langs/" + lang + "/Header.json");
     Serials.LangsHeader snap = JsonUtility.FromJson<Serials.LangsHeader>(json);
