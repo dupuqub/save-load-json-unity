@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainCraft : MonoBehaviour
+public class SettingsMain : MonoBehaviour
 {
   void Start()
   {

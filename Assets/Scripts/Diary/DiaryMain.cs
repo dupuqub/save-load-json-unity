@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainDiary : MonoBehaviour
+public class DiaryMain : MonoBehaviour
 {
   void Start()
   {

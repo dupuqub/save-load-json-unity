@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainAccount : MonoBehaviour
+public class AccountMain : MonoBehaviour
 {
   void Start()
   {

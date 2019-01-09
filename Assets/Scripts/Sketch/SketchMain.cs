@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainSketch : MonoBehaviour
+public class SketchMain : MonoBehaviour
 {
   protected Texture2D cursorIdle;
   protected Texture2D cursorClick;

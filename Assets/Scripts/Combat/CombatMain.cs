@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainLobby : MonoBehaviour
+public class CombatMain : MonoBehaviour
 {
   void Start()
   {
