@@ -22,7 +22,7 @@ public class UpdateLang
       GameObject selector0 = GameObject.Find("AccountSelector" + index);
       Text _0 = selector0.transform.GetChild(2).gameObject.GetComponent<Text>();
       Text _1 = selector0.transform.GetChild(3).gameObject.GetComponent<Text>();
-      Text _2 = selector0.transform.GetChild(4).gameObject.GetComponent<Text>();
+      Text _2 = selector0.transform.GetChild(4).GetChild(0).gameObject.GetComponent<Text>();
       bool playerExists = snapPlayer.name == "null";
 
       _0.text = "0" + "%";
