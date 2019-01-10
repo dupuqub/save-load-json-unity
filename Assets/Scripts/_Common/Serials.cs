@@ -6,7 +6,6 @@ public class Serials
   public class Player : System.Object
   {
     public string name;
-    // public ??? runs;
   }
 
   [System.Serializable]

@@ -25,14 +25,14 @@ public class UpdateLang
       Text percent = selector.transform.GetChild(3).gameObject.GetComponent<Text>();
       Text discovered = selector.transform.GetChild(4).gameObject.GetComponent<Text>();
       Text name = inputObject.transform.GetChild(0).gameObject.GetComponent<Text>();
-      bool playerExists = snapPlayer.name == "null";
+      bool playerExists = snapPlayer.name != "";
 
       percent.text = "0" + "%";
       discovered.text = snapAccount.discovered;
-      name.text = playerExists ? snapAccount.newPlayer : snapPlayer.name;
+      name.text = playerExists ? snapPlayer.name : snapAccount.newPlayer;
 
-      percent.color = playerExists ? percent.color : new Color(1.0f, 1.0f, 1.0f);
-      name.color = playerExists ? name.color : new Color(1.0f, 1.0f, 1.0f);
+      percent.color = playerExists ? new Color(1.0f, 1.0f, 1.0f) : percent.color;
+      name.color = playerExists ? new Color(1.0f, 1.0f, 1.0f) : name.color;
 
       input.characterLimit = 10;
     }
