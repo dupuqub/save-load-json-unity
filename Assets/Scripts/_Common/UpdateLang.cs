@@ -20,17 +20,21 @@ public class UpdateLang
       Serials.Player snapPlayer = JsonUtility.FromJson<Serials.Player>(jsonPlayer);
 
       GameObject selector = GameObject.Find("AccountSelector" + index);
-      Text _0 = selector.transform.GetChild(3).gameObject.GetComponent<Text>();
-      Text _1 = selector.transform.GetChild(4).gameObject.GetComponent<Text>();
-      Text _2 = selector.transform.GetChild(5).GetChild(0).gameObject.GetComponent<Text>();
+      GameObject inputObject = selector.transform.GetChild(5).gameObject;
+      InputField input = inputObject.GetComponent<InputField>();
+      Text percent = selector.transform.GetChild(3).gameObject.GetComponent<Text>();
+      Text discovered = selector.transform.GetChild(4).gameObject.GetComponent<Text>();
+      Text name = inputObject.transform.GetChild(0).gameObject.GetComponent<Text>();
       bool playerExists = snapPlayer.name == "null";
 
-      _0.text = "0" + "%";
-      _1.text = snapAccount.discovered;
-      _2.text = playerExists ? snapAccount.newPlayer : snapPlayer.name;
+      percent.text = "0" + "%";
+      discovered.text = snapAccount.discovered;
+      name.text = playerExists ? snapAccount.newPlayer : snapPlayer.name;
 
-      _0.color = playerExists ? _0.color : new Color(1.0f, 1.0f, 1.0f);
-      _2.color = playerExists ? _2.color : new Color(1.0f, 1.0f, 1.0f);
+      percent.color = playerExists ? percent.color : new Color(1.0f, 1.0f, 1.0f);
+      name.color = playerExists ? name.color : new Color(1.0f, 1.0f, 1.0f);
+
+      input.characterLimit = 10;
     }
 
     Text question = GameObject.Find("QuestionText").GetComponent<Text>();

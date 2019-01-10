@@ -1,0 +1,4 @@
+PT Sans Caption
+SIL Open Font License, 1.1
+PT_Sans-Caption-Web-Regular.ttf: Copyright © 2009 ParaType Ltd. All rights reserved.
+PT_Sans-Caption-Web-Bold.ttf: Copyright © 2009 ParaType Ltd. All rights reserved.
